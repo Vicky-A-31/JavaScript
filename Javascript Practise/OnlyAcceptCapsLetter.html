@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only Accept Capital letter of the each word</title>
+</head>
+<body>
+    <script>
+        let string = "Vignesh Santhosh Nishanth Madhavan Jagadish Hari Balaji"
+        let array = string.split(" ")
+        console.log(array)
+        let show = array.map(val => {
+            return val[0]
+        })
+        let newstring = show.join('')
+        console.log(newstring)
+    </script>
+</body>
+</html>

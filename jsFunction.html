@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function</title>
+</head>
+<body>
+    <script>
+        
+        let area = (...a) => {
+            return a
+        }
+        console.log(area(2,3,6,7,4))
+
+        let array = [2,3,4,5,6,7]
+        let sum = arr => {
+            total = 0
+            for(let i of arr){
+                total += i
+            }
+            return total
+        }
+        console.log(sum(array))
+        console.log(sum)
+        console.log(typeof sum)
+
+        let areaCircle = r => (r*r*Math.PI).toFixed(4)
+        console.log(areaCircle(2))
+        
+        let arg = function(){
+            let sum = 0
+            for(i of arguments){
+                sum += i
+            }
+            return sum
+        }
+        console.log(arg(1,2,3,4,5))
+
+        // generators
+        function* indexGenerators(){
+            let i = 1
+            while(true){
+                yield i++
+            }
+        }
+        const num = indexGenerators()
+        console.log(num.next().value)
+        console.log(num.next().value)
+        console.log(num.next().value)
+
+        let index = () => {
+            let i = 0 
+            while(true){
+                return i++
+            }
+        }
+        console.log(index())
+        console.log(index())
+
+        let add = (...args)=>{
+            total =0
+            for(i of args){
+                total += i
+            }
+            return total
+        }
+        console.log(add(2,3,4,1))
+
+    </script>
+</body>
+</html>

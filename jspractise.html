@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practise</title>
+</head>
+<body>
+    <h2>JavaScript</h2>
+    <p>Hello welcome to JavaScript.</p>
+    
+   <br>
+   Gender:
+   <input type="radio" name="Gender" value="Male">Male
+   <input type="radio" name="Gender" value="Female">Female
+   <input type="radio" name="Gender" value="Others">Others
+   <br>
+   Food Preference:
+   <input type="radio" name="Food" value="Vegetarian">Vegetarian
+   <input type="radio" name="Food" value="Non-Vegetarian">Non-Vegetarian
+   <br>
+   <button type="button" onclick="displayRadioValue()">
+       Submit
+   </button>
+   <button onclick="lengthCheck()">Check</button>
+   <br>
+   <div id="result"></div>
+
+<script>
+     function displayRadioValue() {
+            document.getElementById("result").innerHTML = "";
+            var ele = document.getElementsByTagName('input');
+            console.log(typeof(ele))
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].type = "radio") {
+ 
+                    if (ele[i].checked)
+                        document.getElementById("result").innerHTML
+                            += ele[i].name + " Value: "
+                            + ele[i].value + "<br>";
+                }
+            }
+            for(let key in ele){
+                console.log(ele[key])
+            }
+            
+        }
+
+    function lengthCheck(){
+        let array =  [3,4,6,4]
+        console.log(array.length==5)
+    }
+</script>
+
+</body>
+</html>

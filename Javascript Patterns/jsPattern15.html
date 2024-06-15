@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Diamond Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        
+        for(let row=1; row<=2*num; row++){
+            
+            let size = (row>num) ? row-num : num-row+1;
+            for(let col=1; col<=size; col++){
+                document.write("*")
+            }
+
+            let spaces = (row>num) ? 2*(2*num-row) : 2*(row-1);
+            for(let k=0; k<=spaces; k++){
+                document.write(" &nbsp")
+            }
+
+            let limit = (row>num) ? row-num : num-row+1;
+            for(let col=1; col<=size; col++){
+                document.write("*")
+            }
+    
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

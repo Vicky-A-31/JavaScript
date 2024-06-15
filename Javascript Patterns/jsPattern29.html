@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Image Triangle Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        for(let row=1; row<=2*num-1; row++){
+            let n = row
+            let spaces = (row>num) ? 2*num-row-1 : row-1;
+            for(let k=1; k<=spaces; k++){
+                document.write("&nbsp")
+            }
+            let size = (row>num) ? row-num+1 : num-row+1;
+            for(let col=1; col<=size; col++){
+                document.write(n+" ")
+                n++;
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

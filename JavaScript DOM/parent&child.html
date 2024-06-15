@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <div class="container">
+        <p>Paragraph node 1</p>
+        <p id="child2">Paragraph node 2</p>
+        <p>Paragraph node 3</p>
+        <p>Paragraph node 4</p>
+        <p>Paragraph node 5</p>
+    </div>
+    <script>
+        // parentNode property to find the parent node of specific Element Node.
+        const child = document.querySelector('#child2')
+        console.log(child.parentNode)
+
+        // childNodes property to find all child Elements includes (Text Node and Element Node) of specific Parent node
+        const parent = document.querySelector('.container')
+        console.log(parent.childNodes)
+
+        // firstElementChild property to find the first Element Child of specific Parent Node.
+        console.log(parent.firstElementChild)
+
+        // lastElementChild property to find the last Element Child of specific Parent Node.
+        console.log(parent.lastElementChild)
+
+        // firstChild property to find the first Child (includes text node and element node) of specific Parent Node.
+        console.log(parent.firstChild)
+
+        // lastChild property to find the last Child (includes text node and element node) of specific Parent Node.
+        console.log(parent.lastChild)
+
+        // nextElementSibling property to find the next Element Sibling of specific Element Node
+        const child2 = document.querySelector('#child2')
+        console.log(child2.nextElementSibling)
+
+        // nextElementSibling property to find the next Sibling of specific Element Node
+        console.log(child2.nextSibling)
+    </script>
+</body>
+</html>

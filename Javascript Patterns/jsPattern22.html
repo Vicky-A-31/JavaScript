@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Count Triangle</title>
+</head>
+<body>
+    <script>
+        let count = 1;
+        for(let row=1; row<=4; row++){
+            for(let k=1; k<=row-1; k++){
+                document.write("&nbsp")
+            }
+            for(let col=1; col<=4-row+1; col++){
+                document.write(count+" ")
+                count++;
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

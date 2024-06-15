@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Down Outer Center Triangle Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        for(let row=num; row>=1; row--){
+            for(let k=1; k<=num-row; k++){
+                document.write("&nbsp ")
+            }
+            for(let col=1; col<=2*row-1; col++){
+                if(row==1 || row==num || col==1 || col==2*row-1){
+                    document.write("*")
+                }
+                else{
+                    document.write(" &nbsp")
+                }
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

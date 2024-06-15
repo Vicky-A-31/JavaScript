@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rail Fence Cipher</title>
+</head>
+<body>
+    <h2>Rail Fence Cipher</h2>
+    <label for="msg">Message :</label>
+    <input type="text" id="msg"><br><br>
+    <label for="key">Key :</label>
+    <input type="text" id="key"><br><br>
+    <input type="button" value="Encrypt" onclick="Encrypt()">
+    <input type="button" value="Decrypt" onclick="Decrypt()">
+    <h4 id="output"></h4>
+    <h4 id="show"></h4>
+    
+    <script>
+        function Encrypt(){
+            let msg = document.getElementById('msg').value
+            let key = Number(document.getElementById('key').value)
+            let encrypt = document.getElementById('output')
+            let decrypt = document.getElementById('show')
+
+            let Array = []
+            msg = msg.split('')
+            for(let row=0; row<key; row++){
+                Array[row] = []
+                for(let col=0; col<msg.length; col++){
+                    Array[row][col] = msg[col]
+                    col+=3
+                }
+                console.log(Array[row])
+            }
+            console.log(Array)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+    </ul>
+
+    <script>
+        let menu = document.getElementById('menu')
+        let newItem = document.createElement('li')
+        newItem.innerText = "Contact";
+        console.log(newItem)
+        menu.appendChild(newItem)
+        console.log(menu)
+
+        // createElement() used to create a new Element
+        let div = document.createElement('div')
+        div.innerHTML = "<p>Hello World</p>"
+        
+        // appendChild() used to append the child to specific parent.
+        document.body.prepend(div)
+        console.log(div)
+        console.log(document)
+
+        /* innerHTML property to return the inner both HTML and Text content But, innerText property only return the inner Text content
+        
+        innerHTML property also used to add new HTML elements inside the specific parent
+        
+        innerText property also used to add only Text elements inside the specific parent */
+        console.log(menu.innerHTML)
+        console.log(menu.innerText)
+    </script>
+</body>
+</html>

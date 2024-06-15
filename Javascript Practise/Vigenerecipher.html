@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenere Cipher in Cryptography</title>
+</head>
+
+<body>
+    <h2>Vigenere Cipher</h2>
+    <label for="msg">Message :</label>
+    <input type="text" id="msg"><br><br>
+    <label for="msg">Key :</label>
+    <input type="text" id="key"><br><br>
+    <input type="button" value="Click" onclick="Encrypt()">
+    <h4 id="output"></h4>
+    <h4 id="show"></h4>
+
+    <script>
+        function keyGeneration(input,key){
+            key = key.split('')
+            if(input.length == key.length){
+                return key.join('')
+            }
+            else{
+                temp = key.length
+                for(let i=0; i<(input.length-temp); i++){
+                    key.push(key[(i % key.length)])
+                }
+                return key.join('')
+            }
+        }
+
+        function Encrypt() {
+            let input = document.getElementById('msg').value
+            let key = document.getElementById('key').value
+            let output = document.getElementById('output')
+            let show = document.getElementById('show')
+
+            let alph = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+            let generatedKey = keyGeneration(input,key);
+
+            let inputArray = input.toUpperCase().split('')
+            let keyArray = generatedKey.toUpperCase().split('')
+            
+            let ctArray = []
+            for(let i=0; i<inputArray.length; i++){
+                x = inputArray[i]
+                y = keyArray[i]
+                index = (alph.indexOf(x) + alph.indexOf(y)) % 26;
+                ctArray[i] = alph[index]
+            }
+            output.innerText = ctArray.join('')
+
+            let decryptArray = Decrypt(ctArray,keyArray,alph) 
+            show.innerText = decryptArray.join('')
+        }
+
+        function Decrypt(ctArray,keyArray,alph){
+            let decryptArray = []
+            for(let i=0; i<ctArray.length; i++){
+                x = ctArray[i]
+                y = keyArray[i]
+                index = (alph.indexOf(x) - alph.indexOf(y));
+                if(index < 0){
+                    ch = (26 + index) % 26
+                    decryptArray[i] = alph[ch]
+                }
+                else{
+                    ch = index % 26
+                    decryptArray[i] = alph[ch]
+                }
+            }
+            return decryptArray
+        }
+    </script>
+</body>
+
+</html>

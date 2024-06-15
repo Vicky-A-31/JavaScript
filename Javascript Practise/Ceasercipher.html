@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceaser Cipher in Cryptography</title>
+</head>
+
+<body>
+    <h2>Ceaser Cipher</h2>
+    <label for="msg">Message :</label>
+    <input type="text" id="msg"><br><br>
+    <input type="button" value="Encrypt" onclick="Encrypt()">
+    <input type="button" value="Decrypt" onclick="Decrypt()">
+    <h4 id="output"></h4>
+    <h4 id="show"></h4>
+
+    <script>
+        function Encrypt() {
+            let input = document.getElementById('msg').value
+            let output = document.getElementById('output')
+            
+            let alph = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+            let ptArray = input.toUpperCase().split('')
+            let ctArray = ptArray.map(val =>{
+                let i = alph.indexOf(val)
+                let ch = (i+3)%26
+                return alph[ch]
+            })
+            output.innerText = ctArray.join('')  
+        }
+
+        function Decrypt(){
+            let input = document.getElementById('output').innerText
+            let output = document.getElementById('show')
+            
+            let alph = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+            let ptArray = input.split('')
+            let ctArray = ptArray.map(val =>{
+                let i = alph.indexOf(val)
+                let x = i-3;
+                let char;
+                if(x<0){
+                    char = (26+x)%26
+                    return alph[char]
+                }
+                else{
+                    char = x%26
+                    return alph[char]
+                }
+            })
+            output.innerText = ctArray.join('')  
+        }
+    </script>
+</body>
+
+</html>

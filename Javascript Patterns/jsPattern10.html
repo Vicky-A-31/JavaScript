@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center Down Triangle Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        for(let row=1; row<=num; row++){
+            for(let k=1; k<=row-1; k++){
+                document.write("&nbsp")
+            }
+            for(let col=1; col<=num-row+1; col++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

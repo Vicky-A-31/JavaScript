@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        let n = num
+        for(let i=1; i<=2*n-1; i++){
+            let size = (i>n) ? i-n+1 : n-i+1;
+            for(let k=1; k<=size; k++){
+                document.write("&nbsp")
+            }
+            let m = (i>n) ? 2*n-i : i;
+            for(let j=1; j<=m; j++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

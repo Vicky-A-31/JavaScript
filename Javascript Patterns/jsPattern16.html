@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Number Diamond Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        
+        for(let row=1; row<=2*num-1; row++){
+            
+            let spaces = (row>num) ? row-num : num-row;
+            for(let k=0; k<=spaces; k++){
+                document.write(" &nbsp")
+            }
+        
+            let size = (row>num) ? 2*num-row : row;
+            for(let col=size; col>=1; col--){
+                document.write(col)
+            }
+
+            let limit = (row>num) ? 2*num-row : row;
+            for(let col=2; col<=limit; col++){
+                document.write(col)
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

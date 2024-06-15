@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Number Pattern</title>
+</head>
+<body>
+    <script>
+        let num = Number(prompt("Enter the Number"))
+        
+        for(let row=1; row<=num; row++){
+            
+            for(let k=0; k<=num-row; k++){
+                document.write(" &nbsp")
+            }
+        
+            for(let col=row; col>=1; col--){
+                document.write(col)
+            }
+
+            for(let col=2; col<=row; col++){
+                document.write(col)
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

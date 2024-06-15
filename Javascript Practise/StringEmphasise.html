@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Emphasise</title>
+</head>
+<body>
+    <Script>
+        let str = prompt("Enter the String Sentence")
+        console.log(str)
+        let array = str.split(" ")
+        let arr = []
+        let x = ""
+        for(let i of array){
+            for(let j=0; j<i.length; j++){
+                if(j==0){
+                    x += i[j].toUpperCase()
+                }
+                else{
+                    x += i[j].toLowerCase()
+                }
+            }
+            x += " "
+        }
+        arr.push(x.trim())
+        document.write(arr)
+    </Script>
+</body>
+</html>

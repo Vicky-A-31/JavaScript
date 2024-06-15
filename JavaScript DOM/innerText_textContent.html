@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li style="display: none;">Contact</li>
+    </ul>
+
+    <script>
+        let menu = document.querySelector('#menu')
+        console.log(menu.innerText)
+        console.log(menu.textContent)
+        /* 
+        innetText property - only display the inside Text content of specifi Parent element.
+        textContent property - display the inside Text content of specifi Parent element.
+        It allows the Spaces.
+        */
+
+        menu.innerText = "Hello World"
+        //menu.textContent = "Good Morning Boss" 
+
+        /* 
+        innerText and textContent both property allows to read and write the document
+        read means to display the inside Text content.
+        write means to write new text content.
+
+        Note : before the Document loading on browser, the innerText, 
+        textContent and document.write() are called It is override the Document already existing content. 
+        */
+    </script>
+</body>
+</html>
