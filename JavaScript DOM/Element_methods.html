@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h2 id="heading">This is Heading h2</h2>
+    <ul class="menu"></ul>
+    <script>
+        let heading = document.querySelector('#heading')
+
+        // create a Element Node
+        let para = document.createElement('p')
+        
+        // create a Text Node
+        let paratext = document.createTextNode('This is Paragraph')
+        
+        // appendChild() the paratext to para
+        para.appendChild(paratext)
+        console.log(para)
+
+        // after() - is used to adding new Elements or Strings after the specific Element
+        heading.after(para, "hello vicky")
+
+        /* Difference between append() and appendChild() method in DOM
+           1. appendChild() can only append one node at a time as the last child of the parent.
+           2 .append() can append multiple nodes and strings at once and is more flexible. */
+
+        // append() - used to append multiple nodes and strings at once and is more flexible.
+        let menu = document.querySelector('.menu')
+        let item1 = document.createElement('li')
+        item1.textContent = "Home"
+        console.log(item1)
+        let item2 = document.createElement('li')
+        item2.textContent = "About"
+        console.log(item2)
+
+        menu.append("Contact")
+
+        // prepend() - used to prepend multiple nodes and strings at once and is more flexible. It is similar to append() method
+
+        menu.prepend(item1, "Blog", item2)
+    </script>
+</body>
+</html>

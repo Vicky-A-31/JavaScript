@@ -20,12 +20,17 @@
         menu.appendChild(newItem)
         console.log(menu)
 
-        // createElement() used to create a new Element
-        let div = document.createElement('div')
-        div.innerHTML = "<p>Hello World</p>"
+        // createElement() used to create a new Element Node
+        let h2 = document.createElement('h2')
+        
+        // createTextNode() used to create a new Text Node
+        let text = document.createTextNode("Hello World")
         
         // appendChild() used to append the child to specific parent.
-        document.body.prepend(div)
+        h2.appendChild(text)
+
+        //prepend() used to append the child to specific parent.
+        document.body.prepend(h2)
         console.log(div)
         console.log(document)
 

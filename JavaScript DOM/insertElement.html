@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <!-- before begin -->
+    <ul id="menu"> <!-- This is Begin -->
+    <!-- after begin -->
+        <li>About</li>
+        <li>Contact</li>
+    <!-- before end -->
+    </ul> <!-- This is End -->
+    <!-- after end -->
+
+    <div id="container">
+        <p>This is Paragraph 1</p>
+        <p>This is Paragraph 2</p>
+        <p>This is Paragraph 3</p>
+    </div>
+
+    <script>
+        let menu = document.querySelector('#menu')
+
+        // insertAdjacentHTML() - used to insert a new HTML Element in a specific Position of an Element
+        menu.insertAdjacentHTML("afterbegin", "<li>Home</li>") // Home child added is 1st child of menu.
+        menu.insertAdjacentHTML("beforeend", "<li>Login</li>") // Login child added is last child of menu.
+
+
+        let container = document.getElementById('container')
+        // insertBefore() - used to insert new node before specific position of parent node.
+        // parentNode.insertBefore(newchild, specific child)
+        let newpara = document.createElement('p')
+        newpara.innerText = "this is new paragraph";
+        container.insertBefore(newpara, container.firstElementChild)
+        
+    </script>
+</body>
+</html>

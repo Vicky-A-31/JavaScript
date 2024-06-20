@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <div id="container">
+        <p>This is Paragraph 1</p>
+        <p>This is Paragraph 2</p>
+        <p>This is Paragraph 3</p>
+        <p>This is Paragraph 4</p>
+        <p>This is Paragraph 5</p>
+    </div>
+
+    <div id="copyNode"></div>
+    
+    <script>
+        let container = document.querySelector('#container')
+        
+        // removeChild() - used to remove the child of specific parent node.
+        // parentNode.removeChild(childNode)
+        container.removeChild(container.lastElementChild);
+
+        // replaceChild() - used to replace the exiting child to new child of specific parent node.
+        // parentNode.replaceChild(newchild, oldchild)
+        let para = document.createElement('p')
+        para.innerText = "This is New Paragraph replaced by old Paragraph"
+        container.replaceChild(para, container.firstElementChild)
+
+        // cloneNode() - used to copy the node. It allows parameter 'true' and 'false'
+        // cloneNode(true) means copy the parent and it's childs 
+        // cloneNode(false) means copy only the parent node. It is default behaviour.
+        let copyNode = document.getElementById('copyNode')
+        copyNode.append(container.cloneNode(true))
+    </script>
+</body>
+</html>
