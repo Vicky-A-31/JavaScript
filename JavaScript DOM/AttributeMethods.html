@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <input type="text" id="name" name="username" placeholder="username">
+
+    <script>
+        let input = document.getElementById('name');
+
+        // input.attributes property used to display the all attributes of that Element.
+        console.log(input.attributes)
+
+        // getAttribute() - used to get the Attribute value of specific Element.
+        console.log(input.getAttribute("placeholder"))
+
+        // setAttribute() - used to set the Attribute and it's value of specific Element.
+        input.setAttribute("name", "UserName")
+        console.log(input)
+
+        // removeAttribute() - used to remove the Attribute of specific Element.
+        input.removeAttribute("placeholder")
+        
+        // hasAttribute() - method used to check the specific Element has Attribute or not.
+        // It returns 'true' when the specific Element has that mentioned Attribute otherwise returns 'false'.
+        console.log(input.hasAttribute("id"))
+        console.log(input.hasAttribute("placeholder"))
+
+    </script>
+</body>
+</html>
